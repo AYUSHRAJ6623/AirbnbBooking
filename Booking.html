@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+    <link rel="stylesheet" href="Booking.css">
+</head>
+
+<body>
+    <div class="cart">
+        <img src="data:image/png;base64,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"
+            alt="">
+        <div class="search-bar">
+            <p><input type="text" placeholder="start your search"></p>
+            <div class="glass">
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></p>
+            </div>
+        </div>
+
+        <div class="right">
+            <p>Airbnb your home</p>
+        </div>
+        <div class="globe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+            </svg>
+        </div>
+
+        <div class="profile">
+            <div class="tag1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </div>
+            <div class="tag2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </div>
+        </div>
+        <div class="line">
+            <br>
+            <br>
+            <hr>
+        </div>
+
+        
+        <div class="head">
+            <h3>Baan Sri Dha - Lanna Style Home & Yoga</h3>
+        </div>
+        <div class="star">
+            <p> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>&nbsp;4.97</p>
+            <a>263Review</a>
+            <p>·superhost·</p>
+            <a>Hai ya,chang chiang wat chiang mai,thailand</a>
+
+        </div>
+        <div class="share">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-upload"
+                viewBox="0 0 16 16">
+                <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+            </svg>
+            <p>share</p>
+            <br>
+        </div>
+        <div class="save">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart"
+                viewBox="0 0 16 16">
+                <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+            </svg>
+            <p>save</p>
+        </div>
+
+        
+        <div class="tree">
+            <div class="p1">
+                <img src="https://a0.muscache.com/im/pictures/513bf16b-b908-47fa-a283-0f6ea14629fe.jpg?im_w=1200"
+                    alt="">
+            </div>
+
+            <div class="p2">
+                <img src="https://a0.muscache.com/im/pictures/2e945b22-a84e-4d19-9869-ac65a0a997e5.jpg?im_w=720" alt="">
+            </div>
+
+            <div class="p3">
+                <img src="https://a0.muscache.com/im/pictures/ec6ba8c4-0f8a-48a9-9d7b-ae3fce114ff3.jpg?im_w=720" alt="">
+            </div>
+
+            <div class="p4">
+                <img src="https://a0.muscache.com/im/pictures/51e34c58-2b77-4448-89ce-978cc3cd79d2.jpg?im_w=720" alt="">
+            </div>
+
+            <div class="p5">
+                <img src="https://a0.muscache.com/im/pictures/bbae36de-ce54-4fb2-af11-bf8550d7661f.jpg?im_w=720" alt="">
+            </div>
+        </div>
+
+        <div class="side">
+            <div class="p6">
+                <img src="https://a0.muscache.com/im/pictures/user/77bff038-6658-468e-994a-ebff11328a4c.jpg?im_w=240"
+                    alt="">
+                <div class="t6">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/7c17667bb543df5ea56f7132626c1932613d192f/svgs_collection/svg8.svg"
+                        alt="">
+                </div>
+            </div>
+            <h2>Entire home hosted by Ae And Ton</h2>
+            <div class="content">
+                <li>5guests</li>
+                <li>3bedrooms</li>
+                <li>3beds</li>
+                <li>3bathrooms</li>
+            </div>
+            <hr>
+            <div class="disc">
+                <h4>Great for remote work</h4>
+                <p>Fast wifi at 62 Mbps, plus a dedicated workspace in a common area.</p>
+                <br>
+                <h4>Self check-in</h4>
+                <p>You can check in with the doorperson.</p>
+                <br>
+                <h4>Ae And Ton is a Superhost</h4>
+                <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for
+                    their guests.</p>
+            </div>
+            <br> <br>
+            <hr>
+            <div class="air">
+                <img src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="">
+                <p>Every booking includes free protection from Host cancellations, listing inaccuracies, and <br>
+                    other
+                    issues like trouble checking in.</p>
+                <a>Learn more</a>
+                <br> <br>
+            </div>
+            <hr>
+            <div class="air2">
+                <p>Our charming home is semi wooden with 3 A/C bedrooms and 3 bathrooms. It is equipped with a
+                    kitchen, a bar, fiber optic wifi and a large open space upstairs. It is perfect for a family
+                    with children or a group of friends. We are 10 minutes walking distance from Chiangmai Gate and
+                    the Saturday walking street. We offer complimentary home cooked breakfast every morning and a
+                    complimentary pick up service from the airport</p>
+                <a>show more></a>
+            </div>
+            <br> <br>
+            <hr>
+            
+            <div class="side2">
+                <h3>$8,376 night</h3>
+                <div class="star2">
+                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg> 4.97</p>
+                    <a>263Review</a>
+                </div>
+                <div class="check">
+
+                    <div class="c-in">
+                        <p>CHECK-IN <br>4/16/2023</p>
+                    </div>
+
+                    <div class="bdr"></div>
+                    <hr>
+                    <div class="c-out">
+                        <p>CHECK-OUT <br>4/21/2023 </p>
+                    </div>
+                    <div class="guest">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTolJiuJMpLIYJTjBWOBYeV0iyG6ii3VXJMZDZetb0_Zp2QmuZpMEL5bkWe5lwLGKcQqgQ&usqp=CAU"
+                            alt="">
+                        <p>Guest <br>1 &nbsp; guest </p>
+                    </div>
+                    <div class="reserve">
+                        <p>Reserve</p>
+                    </div>
+                    <div class="count">
+                        <p>You won't be charged yet</p>
+
+                    </div>
+
+                    <div class="bill">
+                        <p>₹18,376*5 night</p>
+                        <a>₹41,897</a>
+                    </div>
+                    <div class="fee">
+                        <p>Service fee</p>
+                        <a>₹5,912</a>
+                    </div>
+                    <hr>
+                    <div class="total">
+                        <p>Total before taxes</p>
+                        <a>₹47,791</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bed">
+                <h4>Where you'll sleep</h4>
+                <div class="b1">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/7c17667bb543df5ea56f7132626c1932613d192f/svgs_collection/svg13.svg"
+                        alt="">
+                    <p> <strong>Bedroom 1</strong> <br>1 King bedroom</p>
+
+                </div>
+                <div class="b2">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/7c17667bb543df5ea56f7132626c1932613d192f/svgs_collection/svg13.svg"
+                        alt="">
+                    <p> <strong>Bedroom 1</strong> <br>1 King bedroom</p>
+
+                </div>
+                <div class="b3">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/7c17667bb543df5ea56f7132626c1932613d192f/svgs_collection/svg13.svg"
+                        alt="">
+                    <p><strong>Bedroom 1</strong> <br>1 King bedroom </p>
+                </div>
+                <br>
+                <br>
+                <hr>
+            </div>
+            <div class="offer">
+                <h4>What this place offers</h4>
+                <div class="i1">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg14.svg"
+                        alt="">
+                    <p>Countyard view</p>
+                </div>
+                <div class="i2">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg15.svg"
+                        alt="">
+                    <p>Kitchen</p>
+                </div>
+                <div class="i3">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg9.svg"
+                        alt="">
+                    <p>Dedicated workspace</p>
+                </div>
+                <div class="i4">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg18.svg"
+                        alt="">
+                    <p>Pets allowed</p>
+                </div>
+                <div class="i5">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg20.svg"
+                        alt="">
+                    <p>AC – split-type ductless system</p>
+                </div>
+                <div class="i6">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg14.svg"
+                        alt="">
+                    <p>Garden view</p>
+                </div>
+                <div class="i7">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg16.svg"
+                        alt="">
+                    <p>Fast wifi – 62 Mbps</p>
+                </div>
+                <div class="i8">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg17.svg"
+                        alt="">
+                    <p>Free driveway parking on <br> premises – 2 spaces</p>
+                </div>
+                <div class="i9">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg19.svg"
+                        alt="">
+                    <p>Paid washer – In building</p>
+                </div>
+                <div class="i10">
+                    <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg21.svg"
+                        alt="">
+                    <p>Bath</p>
+                </div>
+                <div class="show">
+                    <p>Show all 63 amenities</p>
+                </div>
+                <hr>
+            </div>
+            <div class="out">
+                <img src="https://raw.githubusercontent.com/akshkgd/how-to-css/3043e8bae8ffb899136b6d50b828757d930e01f0/svgs_collection/svg22.svg"
+                    alt="">
+                <p>4.97 263 Reviews</p>
+            </div>
+            <div class="Features">
+                <div class="f1">
+                    <p>Cleanliness</p>
+                    <p>Communication</p>
+                    <p>Check-in</p>
+                    <div class="stl">
+                        <z1></z1>
+                        <z2></z2>
+                        <z3></z3>
+                    </div>
+                    <div class="rv">
+                        <p1>4.9</p1>
+                        <p2>5.0</p2>
+                        <p3>5.0</p3>
+                    </div>
+                </div>
+                <div class="f2">
+                    <a1>Cleanliness </a1>
+                    <a2>Communication </a2>
+                    <a3>Check-in </a3>
+                    <div class="sty">
+                        <z1></z1>
+                        <z2></z2>
+                        <z3></z3>
+                    </div>
+                    <div class="rve">
+                        <p1>4.9</p1>
+                        <p2>5.0</p2>
+                        <p3>5.0</p3>
+                    </div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="c1">
+                    <img src="https://a0.muscache.com/im/users/8717030/profile_pic/1405644603/original.jpg?im_w=240"
+                        alt="">
+                    <p>Best stay of our life! Incredible hosts, and most amazing house! <br> So clean, so
+                        comfortable, so walkable, will stay here every time <br> we are in Chiang Mai!</p>
+                </div>
+                <div class="username1">
+                    <p>Andrew<br>January 2023 </p>
+                </div>
+
+
+                <div class="c2">
+                    <img src="https://a0.muscache.com/im/pictures/user/500ef67e-f0b9-4003-b63d-d27ce7dbc950.jpg?im_w=240"
+                        alt="">
+                    <p>Wow! This was just the best Airbnb ever. Fantastic house with <br> loads of space, the most
+                        incredible Thai food for breakfast each <br> morning and absolutely unbeatable hospitality.
+                        Thank</p>
+                </div>
+                <div class="username2">
+                    <p>Wendy<br>January 2023 </p>
+                </div>
+
+                <div class="c3">
+                    <img src="https://a0.muscache.com/im/pictures/user/bd136f22-d612-4c3a-b740-1879660860fd.jpg?im_w=240"
+                        alt="">
+                    <p>I wish we stayed for longer - the property is in such a beautiful <br> area, so close to the
+                        main sections of Chiangmai but so peaceful <br> and quiet. It felt like a proper community -
+                        the hosts</p>
+                </div>
+                <div class="username3">
+                    <p>Bethany<br>December 2022</p>
+                </div>
+
+                <div class="c4">
+                    <img src="https://a0.muscache.com/im/pictures/user/c29aef0f-ec9c-4ebf-b04d-7884cdb39092.jpg?im_w=240"
+                        alt="">
+                    <p>Very kind and communicative hosts. Great location near old town. <br> House was very clean and
+                        had everything we needed .</p>
+                </div>
+                <div class="username4">
+                    <p>Kevin<br>January 2023 </p>
+                </div>
+
+                <div class="c5">
+                    <img src="https://a0.muscache.com/im/users/662013/profile_pic/1442005400/original.jpg?im_w=240"
+                        alt="">
+                    <p>Our family of 5 stayed here for 3 weeks and it was amazing. Couldn't <br> be happier with both
+                        the place and the people. Communication was <br> fantastic before we arrived and during</p>
+                </div>
+                <div class="username5">
+                    <p>Jeff<br>January 2023 </p>
+                </div>
+
+                <div class="c6">
+                    <img src="https://a0.muscache.com/im/pictures/user/ed61f655-d858-41ee-8441-a65963614f4b.jpg?im_w=240"
+                        alt="">
+                    <p>a phenomenal experience. beautiful large wooden house with comfortable <br> beds and great air
+                        conditioning. close to a few small restaurants and walking <br> distance to the busy areas.</p>
+                </div>
+                <div class="username6">
+                    <p>Michael<br>January 2023</p>
+                </div>
+            </div>
+
+            <div class="submit">
+                <p>Show all 63 amenities</p>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+
+</html>
